@@ -1,20 +1,70 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: bindy(128080)
+ * @Date: 2020-08-31 09:28:50
+ * @LastEditors: bindy(128080)
+ * @LastEditTime: 2021-01-29 11:55:11
+ */
 module.exports = {
-    title: 'bindy Yuan\'s blog',
-    description: '我的个人网站',
-    head: [ // 注入到当前页面的 HTML <head> 中的标签
-        // ['link', { rel: 'icon', href: '/logo.jpg' }], // 增加一个自定义的 favicon(网页标签的图标)
-    ],
+    title: 'Bindy 的小仓库',
+    description: 'Living  & Coding',
     base: '/', // 这是部署到github相关的配置
     markdown: {
-        lineNumbers: false // 代码块显示行号
+        lineNumbers: true // 代码块显示行号
     },
+    theme: 'reco',
     themeConfig: {
-        nav: [ // 导航栏配置
-            { text: '工作', link: '/work/' },
-            // { text: '算法题库', link: '/algorithm/' },
-            // { text: '微博', link: 'https://baidu.com' }
+        logo: 'https://gitee.com/bindyy/img/raw/master/a.jpg',
+        authorAvatar: 'https://gitee.com/bindyy/img/raw/master/a.jpg',
+        author: 'bindy',
+        type: 'blog',
+       /*  blogConfig: {
+            category: {
+                location: 2,     // 在导航栏菜单中所占的位置
+                text: '主页' 
+            },
+            category: {
+                location: 3,     // 在导航栏菜单中所占的位置
+                text: '前端' 
+            },
+            category: {
+                location: 4,     // 在导航栏菜单中所占的位置
+                text: '生活' 
+            },
+        }, */
+        subSidebar: 'auto',//在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
+        /**
+* support for
+* 'default'
+* 'funky'
+* 'okaidia'
+* 'solarizedlight'
+* 'tomorrow'
+*/
+
+        codeTheme: 'tomorrow', // default 'tomorrow'
+        nav: [
+            { text: '首页', link: '/', icon: 'reco-home'},
+            {
+                text: '前端', items: [
+                    { text: 'HTML', link: '/html/' },
+                    { text: 'CSS', link: '/css/' },
+                    { text: 'JavaScript', link: '/javascript/' }
+                ]
+            },
+            { text: '杂记', link: '/vue/' , icon: 'reco-other'},
+            { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' }
         ],
-        sidebar: 'auto', // 侧边栏配置
-        sidebarDepth: 2, // 侧边栏显示2级
+        lastUpdated: true,
+    },
+    configureWebpack: {
+        resolve: {
+            alias: {
+            }
+        }
+    },
+    plugins: {
+
     }
 };
