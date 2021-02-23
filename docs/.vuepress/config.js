@@ -4,7 +4,7 @@
  * @Author: bindy(128080)
  * @Date: 2020-08-31 09:28:50
  * @LastEditors: bindy(128080)
- * @LastEditTime: 2021-02-23 14:57:50
+ * @LastEditTime: 2021-02-23 17:50:36
  */
 module.exports = {
     title: 'Bindy 的小仓库',
@@ -88,7 +88,7 @@ module.exports = {
             { text: '杂记', link: '/live/' , icon: 'reco-other'},
             { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' }
         ], */
-        lastUpdated: "Last Updated",
+        lastUpdated: true,
     },
     configureWebpack: {
         resolve: {
