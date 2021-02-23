@@ -4,7 +4,7 @@
  * @Author: bindy(128080)
  * @Date: 2020-08-31 09:28:50
  * @LastEditors: bindy(128080)
- * @LastEditTime: 2021-02-07 18:04:30
+ * @LastEditTime: 2021-02-23 14:57:50
  */
 module.exports = {
     title: 'Bindy 的小仓库',
@@ -23,15 +23,6 @@ module.exports = {
         author: 'bindy',
         type: 'blog',
         subSidebar: 'auto',//在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
-        /**
-* support for
-* 'default'
-* 'funky'
-* 'okaidia'
-* 'solarizedlight'
-* 'tomorrow'
-*/
-
         codeTheme: 'tomorrow', // default 'tomorrow'
         // 博客配置
         blogConfig: {
@@ -41,8 +32,49 @@ module.exports = {
             },
             tag: {
                 location: 3,     // 在导航栏菜单中所占的位置，默认3
-                text: 'Tag'      // 默认文案 “标签”
+                text: '标签'      // 默认文案 “标签”
             }
+        },
+        "nav": [
+            {
+                "text": "主页",
+                "link": "/",
+                "icon": "reco-home"
+            },
+            {
+                "text": "动态",
+                "link": "/timeline/",
+                "icon": "reco-date"
+            },
+            {
+                "text": "文档",
+                "icon": "reco-message",
+                "items": [
+                    {
+                        "text": "svg",
+                        "link": "/docs/svg/"
+                    }
+                ]
+            }/* ,
+            {
+                "text": "Contact",
+                "icon": "reco-message",
+                "items": [
+                    {
+                        "text": "GitHub",
+                        "link": "https://github.com/recoluan",
+                        "icon": "reco-github"
+                    }
+                ]
+            } */
+        ],
+        "sidebar": {
+            "/docs/svg/": [
+                ['', 'SVG基础'],
+                ['2', 'SVG图像处理'],
+                ['3', 'SVG动画'],
+                
+            ]
         },
        /*  nav: [
             { text: '首页', link: '/', icon: 'reco-home'},
@@ -56,7 +88,7 @@ module.exports = {
             { text: '杂记', link: '/live/' , icon: 'reco-other'},
             { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' }
         ], */
-        lastUpdated: true,
+        lastUpdated: "Last Updated",
     },
     configureWebpack: {
         resolve: {

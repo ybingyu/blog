@@ -4,7 +4,7 @@
  # @Author: bindy(128080)
  # @Date: 2020-08-31 09:39:43
  # @LastEditors: bindy(128080)
- # @LastEditTime: 2020-09-11 10:52:37
+ # @LastEditTime: 2021-02-22 13:53:33
 ### 
 #!/usr/bin/env sh
 
@@ -12,7 +12,7 @@
 set -e
 
 # 生成静态文件
-npm run docs:build
+npm run build
 
 # 进入生成的文件夹
 cd docs/.vuepress/dist
