@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>狐妖小狐仙H5总结</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.36d96db5.css" as="style"><link rel="preload" href="/assets/js/app.b72aeca0.js" as="script"><link rel="preload" href="/assets/js/2.b9b49f99.js" as="script"><link rel="preload" href="/assets/js/28.1cfad621.js" as="script"><link rel="prefetch" href="/assets/js/10.7755c6da.js"><link rel="prefetch" href="/assets/js/11.1bbfe7af.js"><link rel="prefetch" href="/assets/js/12.ba2ae096.js"><link rel="prefetch" href="/assets/js/13.e773e6c7.js"><link rel="prefetch" href="/assets/js/14.6e60e5af.js"><link rel="prefetch" href="/assets/js/15.4497e0b3.js"><link rel="prefetch" href="/assets/js/16.ee7531d3.js"><link rel="prefetch" href="/assets/js/17.34eea896.js"><link rel="prefetch" href="/assets/js/18.5e4376f0.js"><link rel="prefetch" href="/assets/js/19.882efd0c.js"><link rel="prefetch" href="/assets/js/20.3d437298.js"><link rel="prefetch" href="/assets/js/21.6b2b2b97.js"><link rel="prefetch" href="/assets/js/22.b11d8ad7.js"><link rel="prefetch" href="/assets/js/23.8f0ced18.js"><link rel="prefetch" href="/assets/js/24.d48e1149.js"><link rel="prefetch" href="/assets/js/25.0f51fa58.js"><link rel="prefetch" href="/assets/js/26.817869b8.js"><link rel="prefetch" href="/assets/js/27.8527cb71.js"><link rel="prefetch" href="/assets/js/29.7183a188.js"><link rel="prefetch" href="/assets/js/3.3dde1379.js"><link rel="prefetch" href="/assets/js/30.0b1c979e.js"><link rel="prefetch" href="/assets/js/31.5d15234a.js"><link rel="prefetch" href="/assets/js/32.b5b278da.js"><link rel="prefetch" href="/assets/js/33.00d68a14.js"><link rel="prefetch" href="/assets/js/34.ff51fb7d.js"><link rel="prefetch" href="/assets/js/35.e1ac5c66.js"><link rel="prefetch" href="/assets/js/4.8342bfd3.js"><link rel="prefetch" href="/assets/js/5.e3802288.js"><link rel="prefetch" href="/assets/js/6.b9fd66f6.js"><link rel="prefetch" href="/assets/js/7.0bca880a.js"><link rel="prefetch" href="/assets/js/8.58fae818.js"><link rel="prefetch" href="/assets/js/9.acd35682.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.36d96db5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="项目背景"><a href="#项目背景" class="header-anchor">#</a> 项目背景</h1> <ul><li>活动前面为视频背景</li> <li>活动游戏内容为摇一摇助力</li> <li>兼容平台为：微信小程序与QQ内，其他平台为二维码引流页面。</li></ul> <p>无接口版体验地址，请手机访问
+https://zydown.99.com/gw/other/package/yby/2021/06/hy/</p> <h1 id="项目总结"><a href="#项目总结" class="header-anchor">#</a> 项目总结</h1> <h2 id="视频兼容"><a href="#视频兼容" class="header-anchor">#</a> 视频兼容</h2> <h3 id="行内视频"><a href="#行内视频" class="header-anchor">#</a> 行内视频</h3> <div class="language- extra-class"><pre class="language-text"><code> &lt;video src=&quot;https://&quot; loop=&quot;true&quot; id=&quot;index1Video&quot; poster=&quot;https://&quot; preload=&quot;auto&quot; autoplay 
+                        x5-video-player-type=&quot;h5&quot;
+                        x5-video-player-fullscreen=&quot;true&quot; webkit-playsinline=&quot;&quot; x-webkit-airplay=&quot;true&quot; airplay=&quot;allow&quot;
+                        playsinline=&quot;&quot; class=&quot;video video-1&quot; 
+                        muted='true'&gt;&lt;/video&gt;
+</code></pre></div><h3 id="自动播放"><a href="#自动播放" class="header-anchor">#</a> 自动播放</h3> <p>视频不允许自动播放，需要用户交互（点击）。所以在每个视频前，注意要设置点击的环节。<br>
+IOS12+，点击一个video标签，其余的video也都被允许播放。而安卓与ios12，每个视频video标签都需要用户交互（点击），才可播放。因此，视频自动切换时用同一个video标签，换src。有前置交互的可以设置不同的video标签</p> <h3 id="跳过视频"><a href="#跳过视频" class="header-anchor">#</a> 跳过视频</h3> <p>需要直接跳过视频，到视频结尾。</p> <p>安卓<code>v.currentTime= v.duration</code>跳过视频无效 。最后采用隐藏视频直接显示结尾的静态图的方案。</p> <p><a href="http://w.bindyy.cn/tools/video.html" target="_blank" rel="noopener noreferrer">视频截图工具<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="onend"><a href="#onend" class="header-anchor">#</a> onend</h3> <p>部分安卓机（某个型号的小米）不执行video.onend，与监听ontimeupdate(e.currentTarget.currentTime )一起使用</p> <div class="language- extra-class"><pre class="language-text"><code>document.getElementById('cutVideo').ontimeupdate = function (e) {
+    if (e.currentTarget.currentTime &gt; 14) {// 时间为已知14s
+        console.log('ppp')
+    }
+}
+</code></pre></div><h2 id="音频"><a href="#音频" class="header-anchor">#</a> 音频</h2> <p>安卓系统用web audio api的原因：</p> <ol><li>安卓播放视频（即使是静音的），背景音乐的audio会变小声。</li> <li>安卓audio不允许多音轨<br>
+IOS不用web audio api，是因为要自动播放背景音乐，用web auido api就无法自动播放，安卓会自动播放</li></ol> <h2 id="震动"><a href="#震动" class="header-anchor">#</a> 震动</h2> <p>安卓支持震动、IOS不支持</p> <div class="language- extra-class"><pre class="language-text"><code>if (navigator.vibrate) {
+    navigator.vibrate(1000);//震动秒数
+} else if (navigator.webkitVibrate) {
+    navigator.webkitVibrate(1000);
+} else {
+    console.log('不支持震动')
+}
+            
+</code></pre></div><h2 id="摇一摇"><a href="#摇一摇" class="header-anchor">#</a> 摇一摇</h2> <p>IOS权限获取需要HTTPS环境，必须要用户同意。点击时调用<code>iosGrantedTips</code>。如果用户拒绝了，关闭APP，会再次发请求。</p> <div class="language- extra-class"><pre class="language-text"><code>        // 摇一摇权限
+        iosGrantedTips() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.indexOf(&quot;like mac os x&quot;) &gt; 0) {
+                var verinfo = ua.match(/cpu iphone os (.*?) like mac os/);
+                var version = verinfo[1].replace(/_/g, &quot;.&quot;);
+                console.log('version', version)
+                var arr = version.split(&quot;.&quot;);
+                if ((arr[0] &gt; 12 &amp;&amp; arr[0] &lt;= 13 &amp;&amp; arr[1] &gt; 2) || arr[0] &gt;= 14) {  //对13.3以后的版本处理,包括13.3,
+
+                    this.ios13granted()
+
+                    return;
+                }
+            }
+
+            //13.3以前的版本或者安卓
+            this.iosDeviceGranted()
+        },
+        ios13granted() {
+            var self = this
+            if (typeof DeviceMotionEvent.requestPermission === 'function') {
+                DeviceMotionEvent.requestPermission().then((permissionState) =&gt; {
+                    /* granted（被授予），denied（被拒绝） 或者default（默认） */
+                    // console.log('p', permissionState)
+                    if (permissionState === 'granted') {
+                        self.iosDeviceGranted()
+                    } else {
+                        // alert(1)
+                        self.iosDeviceDenied()
+                    }
+                }).catch((err) =&gt; {
+                    self.iosDeviceDenied()
+                    // alert(JSON.stringify(err))
+                })
+            } else {
+                // 处理常规的非iOS 13+设备
+                self.iosDeviceGranted()
+            }
+        },
+        // 授权完可以开始游戏
+        iosDeviceGranted() {
+            this.togglePage('game')
+
+            this.closePop('toolSure', true)
+        },
+        // 如果ios被拒绝
+        iosDeviceDenied() {
+            alert(&quot;您未允许权限，请将App关闭或者清除缓存后重新访问授权&quot;);
+        },
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.b72aeca0.js" defer></script><script src="/assets/js/2.b9b49f99.js" defer></script><script src="/assets/js/28.1cfad621.js" defer></script>
+  </body>
+</html>
