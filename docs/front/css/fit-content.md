@@ -33,7 +33,7 @@ tags:
 
 ## width、height新增属性值
 在css3中新增了width、height的属性值：max-content;min-content和fit-content、fill-availablea，用来实现以内容为主的尺寸计算方式。
-### 兼容
+
 IE浏览器不支持，webkit内核浏览器需添加-webkit-前缀
 
 ### fill-availablea
@@ -50,7 +50,7 @@ div { display:inline-block; width:fill-available; }
 
 类似地，高度也有此特性
 
-　　下面的例子中，div元素高度撑满了可用高度
+下面的例子中，div元素高度撑满了可用高度
 ```
 <style>
 div.inner{
@@ -88,7 +88,7 @@ div.inner{
 ```width:min-content```表示采用内部元素最小宽度值最大的那个元素的宽度作为最终容器的宽度
 ```width:max-content```表示采用内部元素宽度值最大的那个元素的宽度作为最终容器的宽度。如果出现文本，则相当于文本不换行
 
-### fit-content的属性 
+### fit-content 
 width:fit-content可以实现元素收缩效果的同时，保持原本的block水平状态，于是，就可以直接使用margin:auto实现元素向内自适应同时的居中效果了。就是div的自适应宽度不是100%而是内容的大小。很好的实现了，block元素的水平居中。  
 
 类似地，高度也有此特性，但不常用 
