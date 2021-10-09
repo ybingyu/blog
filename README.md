@@ -28,3 +28,7 @@ https://github.com/vuepress-reco/vuepress-theme-reco/issues/276
 - 以前的代码整理/work 目录（横向无法滚动）
 - 上一篇下一篇
 - 统计代码，
+
+# TO LEARN
+- scrolln-snap-type
+- scroll-behavior: smooth;

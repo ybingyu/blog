@@ -19,12 +19,12 @@ tags:
 
 # 替换
 1. 
-```
+```javascript
 // 类组件
 import Taro, { Component } from '@tarojs/taro'
 ```
 to
-```
+```javascript
 import Taro from '@tarojs/taro'
 import React, { Component }  from 'react'  
 ```
@@ -34,16 +34,16 @@ import React, { Component }  from 'react'
 
 2. 
 
-```
+```javascript
 import { observer, inject } from '@tarojs/mobx'
 ```
 to
-```
+```javascript
 import { observer, inject } from 'mobx-react'
 ```
 
 3. app.jsx
-```
+```javascript
 import { Provider } from '@tarojs/mobx'
 render() {
         return (
@@ -55,7 +55,7 @@ render() {
 ```
 
 to 
-```
+```javascript
 import { Provider } from 'mobx-react'
  render() {
         return (
@@ -70,8 +70,10 @@ import { Provider } from 'mobx-react'
 
 
 4. 用到 
-shouldComponentUpdate的组件要继承于Taro.PureComponent
-https://taro-docs.jd.com/taro/blog/2020-04-27-taro-vs-jd#shouldcomponentupdate--taropurecomponent
+shouldComponentUpdate 的组件要继承于Taro.PureComponent
+[https://taro-docs.jd.com/taro/blog/2020-04-27-taro-vs-jd#shouldcomponentupdate--taropurecomponent](https://taro-docs.jd.com/taro/blog/2020-04-27-taro-vs-jd#shouldcomponentupdate--taropurecomponent)
+
+
 
 删除componentWillReact 生命周期
 
@@ -80,7 +82,7 @@ https://taro-docs.jd.com/taro/blog/2020-04-27-taro-vs-jd#shouldcomponentupdate--
 ```this.$router.params ```
 to  
 
-```
+```javascript
 import Taro,{getCurrentInstance } from '@tarojs/taro'
 
 current = getCurrentInstance()
@@ -90,7 +92,7 @@ this.current.router.params
 
 6. 
 config要单独出来index.config.js
-```
+```javascript
 export default {
     navigationBarTitleText: '解绑'
 }
@@ -98,14 +100,14 @@ export default {
 
 7. 
 out-class不起作用了，替换方案将class当属性传入
-```
+```javascript
  static options = {
       addGlobalClass: true
     }
     static externalClasses = ['out-class']
 ```
 to
-```
+```javascript
  const { outCls } = this.props;
         return (
             <View>
