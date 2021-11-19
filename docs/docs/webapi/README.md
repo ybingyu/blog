@@ -1,6 +1,6 @@
 ---
 title: Web API(一)
-date: 2021-02-26
+date: 2021-11-01
 ---
 
 ## Web API 介绍
@@ -34,14 +34,16 @@ API就是给程序员提供的一种工具，以便能更轻松的实现想要�
 - Web API 是浏览器提供的一套操作浏览器功能和页面元素的 API ( BOM 和 DOM )。
 - 现阶段我们主要针对于浏览器讲解常用的 API , 主要针对浏览器做交互效果。比如我们想要浏览器弹出一个警示框，直接使用 alert(‘弹出’)
 - MDN 详细 API : [https://developer.mozilla.org/zh-CN/docs/Web/API](https://developer.mozilla.org/zh-CN/docs/Web/API)
-- 因为 Web API 很多，所以我们将这个阶段称为 Web APIs。
-- 此处的 Web API 特指浏览器提供的一系列API(很多函数或对象方法)，即操作网页的一系列工具。例如：操作html标签、操作页面地址的方法。
+<!--
+因为 Web API 很多，所以我们将这个阶段称为 Web APIs。
+此处的 Web API 特指浏览器提供的一系列API(很多函数或对象方法)，即操作网页的一系列工具。例如：操作html标签、操作页面地址的方法。 -->
 
 ### 总结
 - API 是为我们程序员提供的一个接口，帮助我们实现某种功能，我们会使用就可以了，不必纠结内部如何实现
 - Web API 主要是针对于浏览器提供的接口，主要针对于浏览器做交互效果。
 - Web API 一般都有输入和输出（函数的传参和返回值），Web API 很多都是方法（函数）
-- 学习 Web API 可以结合前面学习内置对象方法的思路学习
+
+<!-- - 学习 Web API 可以结合前面学习内置对象方法的思路学习 -->
 
 <!-- 链接：https://juejin.cn/post/6972170210333704229;https://juejin.cn/post/6978774911825231902 -->
 
@@ -52,17 +54,17 @@ https://juejin.cn/post/6980275287837638687 -->
 ## DOM
 <!-- https://juejin.cn/post/6844903922922962958 -->
 
-### 文档对象类型
+### 概念
 当网页被加载时，浏览器会创建页面的**文档对象模型**（Document Object Model，DOM）。  
-HTML DOM 模型被结构化为对象树：
-![](https://gitee.com/bindyy/img/raw/master/webapi/2.png)
+HTML DOM 模型被结构化为对象树：  
+![](https://gitee.com/bindyy/img/raw/master/webapi/2.gif)
 
 - 文档：一个网页可以称为文档
 - 节点：网页中的所有内容都是节点（标签、属性、文本、注释等）
 - 元素：网页中的标签
 - 属性：标签的属性
 
-**文档对象模型**为用户提供了操作HTML文档的API：
+**文档对象模型**(DOM)为用户提供了操作HTML文档的API：
 1. 获取元素
 2. 对元素进行操作（设置属性或者调用其方法）
 3. 动态创建元素
@@ -71,7 +73,7 @@ HTML DOM 模型被结构化为对象树：
 ### 获取元素
 #### 通过CSS选择符选择元素
 <!-- ```querySelector```和```querySelectorAll```可以按CSS选择符找到匹配的元素。 -->
-1. ```querySelector```，可以按CSS选择符找到匹配的元素。接收一个CSS选择符字符串作为参数。找到文档中第一个匹配的元素，如果没有找到返回null
+1. ```querySelector```，可以按CSS选择符找到匹配的元素。接收一个CSS选择符字符串作为参数。找到文档中**第一个**匹配的元素，如果没有找到返回null
 ```javascript
 let spiner = document.querySelector('#spinder')//  属性id="spinder"的元素
 let span1 = document.querySelector('span.fatal.error')// class属性中包含'fatal'和'error'的<span>元素
@@ -80,15 +82,15 @@ let span3 = document.querySelector('#logo span') // id="logo"元素的后代中�
 let span4 = document.querySelector('.logo,.title') // class="logo"或者class=".title"的第一个匹配的元素
 ```
 
-2. ```querySelectorAll```，与```querySelector```类似，不同的是返回文档中所有匹配的元素
+2. ```querySelectorAll```，与```querySelector```类似，不同的是返回文档中**所有**匹配的元素
 ```javascript
 let titles = document.querySelectorAll('h1,h2,h3')// 查找文档所有<h1><h2><h3>
 ```
 返回的是类似数组的```NodeList```对象。```NodeList```对象有```length```属性，可以像数组一样通过索引访问，因此可以使用传统的```for```循环遍历。```NodeList```也是可迭代对象，因此也可以在```for/of```循环中使用。如果想把```NodeList```转换为真正的数组，只要把它传给```Array.from()```即可。
  
-如果文档中没有找到匹配的元素，返回的```lengt```h等于0。
+如果文档中没有找到匹配的元素，返回的```length```等于0。
 
-```querySelector```和```querySelectorAll```是匹配不到伪元素的。
+注意：```querySelector```和```querySelectorAll```是匹配不到伪元素的。
 
 3. ```closest```以一个选择符作为唯一参数。如果选择符匹配那个调用它的元素，则返回该元素；否则就返回与选择不匹配的最近的祖先元素；如果没有匹配，则返回```null```。
 ```javascript
@@ -111,7 +113,7 @@ function isHeading(e){
 - ```firstElementChild```、```lastElementChild```分别引用元素的第一个子元素和最后一个子元素。如果没有子元素，它们的值为```null```
 - ```previousElementSibling```、```nextElementSibling```，分别引用元素左侧紧邻和右侧紧邻的同辈元素。如果没有相应的同辈元素则为```null```
 
-以上属性只获得文档中的```Element```，而不包括```Text```节点（文本，以及元素间的空白）和```Comment```节点（注释）。如果不想忽略```Text```节点和```Comment```节点，可以使用另一组在素有```Node```对象上都有定义的属性
+以上属性只获得文档中的```Element```，而不包括```Text```节点（文本，以及元素间的空白）和```Comment```节点（注释）。如果不想忽略```Text```节点和```Comment```节点，可以使用另一组在所有```Node```对象上都有定义的属性
 
 - ```childNodes``` ，只读```NodeList```对象，包含节点的所有子节点
 - ```firstChild```、```lastChild```当前节点的第一个子节点和最后一个子节点
@@ -160,7 +162,7 @@ p.innerHTML// iHello <em>World</em>!
 let dom = document.querySelector('h2')
 dom.after(p,document.createElement('hr'))// 在标题h2后面插入新创建的p和一条水平线
 ```
-元素如果已经在文档中了，再调用插入，它会挪到新位置，二不会复制一个新的过去。 
+元素如果已经在文档中了，再调用插入，它会挪到新位置，而不会复制一个新的过去。 
 - ```cloneNode()```复制方法，传入```true```复制全部内容（子元素），否则只复制本身
 - ```remove()```移走调用的元素
 ```javascript
@@ -173,16 +175,16 @@ dom.replaceWith(p)// 移走dom，插入p元素
 
 ### 事件
 #### 事件模型
-1. 事件类型，是一个字符串。如"mouseover"，"keydown"，"keydown"
-2. 事件目标，是一个对象。事件就发生在该对象或者事件与该对象有关。比如Window.onload的事件目标是```Window``，一个HTML元素发生了点击事件，这个元素就是点击事件的事件目标
-3. 事件处理程序或事件监听器，是一个函数。当事件目标上发生指定类型的事件时，浏览器会调用这个处理程序。
-4. 事件对象，包含有关该事件的细节。事件对象最为事件处理程序的参数传入。所有事件对象都有type和target属性，分别表示时间类型和时间目标。
-5. 事件传播，是一个过程。“冒泡”、“捕获”的过程。
+1. **事件类型**，是一个字符串。如"mouseover"，"keydown"，"keydown"
+2. **事件目标**，是一个对象。事件就发生在该对象或者事件与该对象有关。比如Window.onload的事件目标是```Window```，一个HTML元素发生了点击事件，这个元素就是点击事件的事件目标
+3. **事件处理程序**或**事件监听器**，是一个函数。当事件目标上发生指定类型的事件时，浏览器会调用这个处理程序。
+4. **事件对象**，包含有关该事件的细节。事件对象最为事件处理程序的参数传入。所有事件对象都有type和target属性，分别表示事件类型和事件目标。
+5. **事件传播**，是一个过程。“冒泡”、“捕获”的过程。
 #### 注册事件
 <!-- onclick这种不讲 -->
-```addEventListener()```，第一个参数是注册处理程序的事件类型(String)，第二个参数是指定事件类型发生时调用的函数。第三参数是可选的。
+```addEventListener()```，第一个参数是注册处理程序的**事件类型**(String)，第二个参数是指定事件类型发生时调用的函数。第三参数是可选的。
 ```javascript
-let b = document.querSelector('btn');
+let b = document.querSelector('.btn');
 b.addEventListener('click',(e)=>{console.log('button click:',e)})
 ```
 从一个对象上移除注册事件用```removeEventLitener()```方法，前两个参数是一样的，第三个参数也是可选的。
@@ -220,14 +222,14 @@ d.removeEventListener('click',handleMouseMove,{
 
 自定义事件:
 ```new CustomEvent(typeArg,customEventInit);```
-- typeArg:字符串，表示事件类型
-- customEventInit：可选，对象，用于指定事件对象的属性。
-    - detail:字符串，对象或者其他值
-    - bubbles:布尔值，如果是true则向上冒泡；默认false，不冒泡
-    - cancelable:布尔值，表示该事件是否可以取消，true:可以使用事件对象的 stopPropagation() 方法取消事件传播。
+- ```typeArg```:字符串，表示事件类型
+- ```customEventInit```：可选，对象，用于指定事件对象的属性。
+    - ```detail```:字符串，对象或者其他值
+    - ```bubbles```:布尔值，如果是true则向上冒泡；默认false，不冒泡
+    - ```cancelable```:布尔值，表示该事件是否可以取消，true:可以使用事件对象的 ```stopPropagation```() 方法取消事件传播。
 ```javascript
 // 监听
-window.addEventListener('test', e => {  console.log(e) })
+window.addEventListener('test', function(e) {  console.log(e) })
 
 // 创建一个自定义事件
 let event = new CustomEvent('test', { detail: '测试自定义事件' })
@@ -246,7 +248,8 @@ window.dispatchEvent(event)
         // a : While a window.CustomEvent object exists, it cannot be called as a constructor.
         // b : There is no window.CustomEvent object
         new window.CustomEvent('T');
-    }catch(e){
+    }
+    catch(e){
         var CustomEvent = function(event, params){
             params = params || { bubbles: false, cancelable: false, detail: undefined };
 
@@ -263,7 +266,9 @@ window.dispatchEvent(event)
     }
 })();
 ```
+[demo](https://w.bindyy.cn/webapi/customevent.html)
 
+> 拓展：Event()与CustomEvent()的区别
 <!-- TODO: event()区别是否是event不能在web worker中使用， -->
 ### 操作CSS
 <!-- - classList -->
@@ -320,6 +325,9 @@ function toggleTheme(){
     }
 }
 ```
+[demo](http://w.bindyy.cn/webapi/styledisabled/index.html)
+
+
 方法2. ```DOM API```插入新样式表
 ```javascript
 function setTheme(name){
@@ -342,70 +350,5 @@ function setTheme(name){
 ```
 
 #### 更多
-1. [CSS Object Model](https://developer.mozilla.org/zh-CN/docs/Web/API/CSS_Object_Model)是一组允许用JavaScript操纵CSS的API。 它是继DOM和HTML API之后，又一个操纵CSS的接口，从而能够动态地读取和修改CSS样式。
+ [CSS Object Model](https://developer.mozilla.org/zh-CN/docs/Web/API/CSS_Object_Model)是一组允许用JavaScript操纵CSS的API。 它是继DOM和HTML API之后，又一个操纵CSS的接口，从而能够动态地读取和修改CSS样式。
 
-
-<!-- ## 文档几何
-- 文档坐标、视口坐标、容器坐标
-- getBoundingClientRect() getClientRects 
-- elementFromPoint()
-- scrollTo scrollBy scrollIntoView
-- 视口大小、内容大小、滚动位置 -->
-
-
-
-
-## 组件
-
-
-(需要找资料理解一下)
-组件script module 模板tempate 自定义元素customElements.define 影子Dom shadowRoot
-lit-element库
-腾讯Omi: 是一款基于 Web Components 并支持 IE8+(omio)，小程序(omi-kbone) 和 任意前端框架集成。
-Svelte：框架，会编译成组件
-polymer
-## audio webAudio API
-这个很复杂-是否要讲-都用库
-
-
-# BOM
-## 位置导航历史
-- assign\replace reload
-- back forward go
-- hash\hashchange （在uc浏览器及uc团队出品的夸克浏览器下 响应速度很慢）
-- pushState() replaceState()  popstate事件===找点资料看看，书上有个猜数字的例子
-
-## 网络
-- fetch
-- SSE
-- WebSocket
-可以是一个大章节-结合demo重点单开一课上一下？
-
-## 存储
-- storage:getItem setItem deleteItem clear、事件storage、跨站限制
-- cookie
-- IndexedDB
-
-## Workers 线程
-
-
-
-
-
-
-# 网络状态
-# 电池状态
-# 设备震动
-# 页面状态
-页面可见性
-屏幕方向
-page lifecycle(网页生命周期) https://juejin.cn/post/6844903741024370701#heading-0
-# execCommand 执行命令
-https://juejin.cn/post/6844903741024370701#heading-0
-
-
-
-# IntersectionObserver 
-https://juejin.cn/post/6844903874302574599#heading-0
-
-# 全屏
