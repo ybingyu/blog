@@ -4,7 +4,19 @@ date: 2021-11-01
 ---
 
 ## Web API 介绍
-### JS的组成
+
+
+### API
+API（Application Programming Interface，应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，无需理解其内部工作机制细节，只需直接调用使用即可。
+ 
+API就是给程序员提供的一种工具，以便能更轻松的实现想要完成的功能
+> 例如，  
+> C语言中有一个函数 fopen()可以打开硬盘上的文件，这个函数对于我们来说，就是一个C语言提供的打开文件的工具。  
+> javascript中有一个函数alert()可以在页面弹一个提示框，这个函数就是js提供的一个弹框工具。  
+> 这些工具（函数）由编程语言提供，内部的实现已经封装好了，我们只要学会灵活的使用这些工具即可。  
+
+###  Web  API
+
 ![](https://gitee.com/bindyy/img/raw/master/webapi/1.png)
 
 
@@ -21,27 +33,13 @@ DOM可以把HTML看做是文档树，通过DOM提供的API可以对树上的节�
 通过BOM可以操作浏览器窗口，比如：弹出框、控制浏览器跳转、获取分辨率等
 
 
-### API
-API（Application Programming Interface，应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，无需理解其内部工作机制细节，只需直接调用使用即可。
- 
-API就是给程序员提供的一种工具，以便能更轻松的实现想要完成的功能
-> 例如，  
-> C语言中有一个函数 fopen()可以打开硬盘上的文件，这个函数对于我们来说，就是一个C语言提供的打开文件的工具。  
-> javascript中有一个函数alert()可以在页面弹一个提示框，这个函数就是js提供的一个弹框工具。  
-> 这些工具（函数）由编程语言提供，内部的实现已经封装好了，我们只要学会灵活的使用这些工具即可。  
-
-###  Web  API
-- Web API 是浏览器提供的一套操作浏览器功能和页面元素的 API ( BOM 和 DOM )。
-- 现阶段我们主要针对于浏览器讲解常用的 API , 主要针对浏览器做交互效果。比如我们想要浏览器弹出一个警示框，直接使用 alert(‘弹出’)
-- MDN 详细 API : [https://developer.mozilla.org/zh-CN/docs/Web/API](https://developer.mozilla.org/zh-CN/docs/Web/API)
-<!--
-因为 Web API 很多，所以我们将这个阶段称为 Web APIs。
+<!-- 因为 Web API 很多，所以我们将这个阶段称为 Web APIs。
 此处的 Web API 特指浏览器提供的一系列API(很多函数或对象方法)，即操作网页的一系列工具。例如：操作html标签、操作页面地址的方法。 -->
 
 ### 总结
 - API 是为我们程序员提供的一个接口，帮助我们实现某种功能，我们会使用就可以了，不必纠结内部如何实现
-- Web API 主要是针对于浏览器提供的接口，主要针对于浏览器做交互效果。
-- Web API 一般都有输入和输出（函数的传参和返回值），Web API 很多都是方法（函数）
+- Web API是浏览器提供的一套操作浏览器功能和页面元素的API( BOM和DOM)
+- MDN 详细 API : [https://developer.mozilla.org/zh-CN/docs/Web/API](https://developer.mozilla.org/zh-CN/docs/Web/API)
 
 <!-- - 学习 Web API 可以结合前面学习内置对象方法的思路学习 -->
 
@@ -75,8 +73,8 @@ HTML DOM 模型被结构化为对象树：
 <!-- ```querySelector```和```querySelectorAll```可以按CSS选择符找到匹配的元素。 -->
 1. ```querySelector```，可以按CSS选择符找到匹配的元素。接收一个CSS选择符字符串作为参数。找到文档中**第一个**匹配的元素，如果没有找到返回null
 ```javascript
-let spiner = document.querySelector('#spinder')//  属性id="spinder"的元素
-let span1 = document.querySelector('span.fatal.error')// class属性中包含'fatal'和'error'的<span>元素
+let spiner = document.querySelector('#logo')//  属性id="logo"的元素
+let span1 = document.querySelector('span.tips.error')// class属性中包含'tips'和'error'的<span>元素
 let span2 = document.querySelector('span[name="x"]') // 属性 name="x"的<span>元素
 let span3 = document.querySelector('#logo span') // id="logo"元素的后代中的第一个<span>元素
 let span4 = document.querySelector('.logo,.title') // class="logo"或者class=".title"的第一个匹配的元素
@@ -86,7 +84,7 @@ let span4 = document.querySelector('.logo,.title') // class="logo"或者class=".
 ```javascript
 let titles = document.querySelectorAll('h1,h2,h3')// 查找文档所有<h1><h2><h3>
 ```
-返回的是类似数组的```NodeList```对象。```NodeList```对象有```length```属性，可以像数组一样通过索引访问，因此可以使用传统的```for```循环遍历。```NodeList```也是可迭代对象，因此也可以在```for/of```循环中使用。如果想把```NodeList```转换为真正的数组，只要把它传给```Array.from()```即可。
+返回的是类似数组的```NodeList```对象。```NodeList```对象有```length```属性，可以像数组一样通过索引访问，因此可以使用传统的```for```循环遍历。```NodeList```也是可迭代对象（```iterable```），因此也可以在```for/of```循环中使用。如果想把```NodeList```转换为真正的数组，只要把它传给```Array.from()```即可。
  
 如果文档中没有找到匹配的元素，返回的```length```等于0。
 
@@ -115,24 +113,27 @@ function isHeading(e){
 
 以上属性只获得文档中的```Element```，而不包括```Text```节点（文本，以及元素间的空白）和```Comment```节点（注释）。如果不想忽略```Text```节点和```Comment```节点，可以使用另一组在所有```Node```对象上都有定义的属性
 
-- ```childNodes``` ，只读```NodeList```对象，包含节点的所有子节点
+- ```childNodes``` ，```NodeList```对象，包含节点的所有子节点
 - ```firstChild```、```lastChild```当前节点的第一个子节点和最后一个子节点
-- ```previousSibling```、```newxSibling``` 当前节点的前一个同辈节点和后一个同辈节点。
+- ```previousSibling```、```nextSibling``` 当前节点的前一个同辈节点和后一个同辈节点。
+<!-- NOTE:讲完后去页面上操作一下 childNodes firstChild 看一下区别 -->
 ### 属性
 #### 通用方法
 ```Element```类定义了查询、设置、检查和删除元素的属性的通用方法：
-- ```getAttribute()``` 获得属性值
-- ```setAttribute()``` 设置属性值
-- ```hasAttribute()``` 属性值是否存在
-- ```removeAttribute()``` 删除元素的属性
+- ```getAttribute()``` 获得属性值：```e.getAttribute('href')```
+- ```setAttribute()``` 设置属性值：```e.setAttribute('href','https://baidu.com')```
+- ```hasAttribute()``` 属性值是否存在，返回```Boolean```： ```e.hasAttribute('href')```
+- ```removeAttribute()``` 删除元素的属性： ```e.removeAttribute('href')```
+<!-- NOTE:去页面上操作一下 -->
 #### class 属性
-```Element```对象上的```className```属性，获得的值是空格分割的CSS类名的字符串。（由于class在JavaScript中是保留字）  
-```classList```属性，支持将class属性作为一个列表来操作
-- ```add()``` 增加类名
-- ```remove()``` 删除类名
-- ```contains()``` 是否包含指定类名(返回Boolean)
-- ```toggle()``` 切换类名（有则删、无则增，常用于一些切换操作，如显示/隐藏）
-- ```replace()``` 替换类名
+```Element```对象上的
+1. ```className```属性，获得的值是空格分割的CSS类名的字符串。（由于```class```在JavaScript中是保留字）  
+2. ```classList```属性，支持将class属性作为一个列表来操作
+    - ```add()``` 增加类名
+    - ```remove()``` 删除类名
+    - ```contains()``` 是否包含指定类名(返回Boolean)
+    - ```toggle()``` 切换类名（有则删、无则增，常用于一些切换操作，如显示/隐藏）
+    - ```replace()``` 替换类名
 
 ```javascript
 dom.classList.remove('hidden')
@@ -162,7 +163,8 @@ p.innerHTML// iHello <em>World</em>!
 let dom = document.querySelector('h2')
 dom.after(p,document.createElement('hr'))// 在标题h2后面插入新创建的p和一条水平线
 ```
-元素如果已经在文档中了，再调用插入，它会挪到新位置，而不会复制一个新的过去。 
+元素如果已经在文档中了，再调用插入，它会挪到新位置，而不会复制一个新的过去。
+ <!-- 操作页面示例  -->
 - ```cloneNode()```复制方法，传入```true```复制全部内容（子元素），否则只复制本身
 - ```remove()```移走调用的元素
 ```javascript
@@ -175,10 +177,10 @@ dom.replaceWith(p)// 移走dom，插入p元素
 
 ### 事件
 #### 事件模型
-1. **事件类型**，是一个字符串。如"mouseover"，"keydown"，"keydown"
-2. **事件目标**，是一个对象。事件就发生在该对象或者事件与该对象有关。比如Window.onload的事件目标是```Window```，一个HTML元素发生了点击事件，这个元素就是点击事件的事件目标
+1. **事件类型**，是一个字符串。如"mouseover"，"keydown"，"keyup"
+2. **事件目标**，是一个对象。事件就发生在该对象或者事件与该对象有关。比如```Window.onload```的事件目标是```Window```，一个HTML元素发生了点击事件，这个元素就是点击事件的事件目标
 3. **事件处理程序**或**事件监听器**，是一个函数。当事件目标上发生指定类型的事件时，浏览器会调用这个处理程序。
-4. **事件对象**，包含有关该事件的细节。事件对象最为事件处理程序的参数传入。所有事件对象都有type和target属性，分别表示事件类型和事件目标。
+4. **事件对象**，包含有关该事件的细节。事件对象最为事件处理程序的参数传入。所有事件对象都有```type```和```target```属性，分别表示事件类型和事件目标。
 5. **事件传播**，是一个过程。“冒泡”、“捕获”的过程。
 #### 注册事件
 <!-- onclick这种不讲 -->
@@ -195,11 +197,11 @@ d.removeEventListener('mousemove',handleMouseMove);
 ```
 
 第三个参数是一个布尔值或对象。
-- 传入```true```，函数就会被注册成捕获事件处理程序。那么移除的时候，调用```removeEventLitener()```时也传入true作为第三个参数
+- 传入```true```，函数就会被注册成捕获事件处理程序。那么移除的时候，调用```removeEventLitener()```时也传入```true```作为第三个参数
 - 传入对象
 
 ```javascript
-d.removeEventListener('click',handleMouseMove,{
+d.addEventListener('click',handleMouseMove,{
     capture: true, 
     once: true,
     passive: true
@@ -226,7 +228,7 @@ d.removeEventListener('click',handleMouseMove,{
 - ```customEventInit```：可选，对象，用于指定事件对象的属性。
     - ```detail```:字符串，对象或者其他值
     - ```bubbles```:布尔值，如果是true则向上冒泡；默认false，不冒泡
-    - ```cancelable```:布尔值，表示该事件是否可以取消，true:可以使用事件对象的 ```stopPropagation```() 方法取消事件传播。
+    - ```cancelable```:布尔值，表示该事件是否可以取消，true:可以使用事件对象的 ```stopPropagation()``` 方法取消事件传播。
 ```javascript
 // 监听
 window.addEventListener('test', function(e) {  console.log(e) })
@@ -266,9 +268,9 @@ window.dispatchEvent(event)
     }
 })();
 ```
-[demo](https://w.bindyy.cn/webapi/customevent.html)
+[demo](http://w.bindyy.cn/webapi/customevent.html)
 
-> 拓展：Event()与CustomEvent()的区别
+<!-- > 拓展：Event()与CustomEvent()的区别 -->
 <!-- TODO: event()区别是否是event不能在web worker中使用， -->
 ### 操作CSS
 <!-- - classList -->
@@ -290,11 +292,12 @@ f.setAttribute('style',e.getAttribute('style'))
 // 或者cssText属性
 f.style.cssText = e.style.cssText
 ```
+<!-- 以上获得的是行内样式的： -->
 #### 计算样式
 元素的计算样式（computed style）是浏览器根据一个元素的行内样式和所有样式表中使用的样式规则导出（或计算得到的）一组属性值。
 
 使用```Window```对象的```getComputedStyle()```方法可以获取一个元素的计算样式。
-- 第一个参数是要查询的元素，可选的第二个参数用于指定一个CSS伪元素（::before,::after）
+- 第一个参数是要查询的元素，可选的第二个参数用于指定一个CSS伪元素（```::before```,```::after```）
 ```javascript
 let styles = window.getComputedStyle(dom);
 let beforeStyles = window.getComputedStyle(dom,'::before');
@@ -302,9 +305,9 @@ let beforeStyles = window.getComputedStyle(dom,'::before');
 - 返回值是```CSSStyleDelcaration```对象表示
 - 只读的，不能修改计算样式
 - 计算样式的属性是绝对值。百分比和点等相对单位都会被转换成绝对值。
-    - 大小属性，返回的字符串会带'px'后缀
-    - 颜色属性用'rgb()'返回
-- 简写属性不会被计算，只有它们代表的基础属性会被计算。简写属性，如margin、padding、border
+    - 大小属性，返回的字符串会带'```px```'后缀
+    - 颜色属性用'```rgba()```'返回
+- 简写属性不会被计算，只有它们代表的基础属性会被计算。简写属性，如```margin```、```padding```、```border```
 
 #### 操作样式表
 ```Javascript```可以操作样式表。给```<style>```标签或者```<link red="stylesheet">```标签定个id。然后可以通过获得DOM的API，比如```querySelector()```找到标签。
