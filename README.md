@@ -22,10 +22,13 @@ https://github.com/vuepress-reco/vuepress-theme-reco/issues/276
 # PLAN:
 
 - 1.6.5 版本-中文目录-但会报错
-- js api 课程准备
+- js api 课程准备 12.21-1.21之间（2）
 - css （新/未知）属性深究----样式实现
     - scrolln-snap-type
-    - scroll-behavior: smooth;
+    - scroll-behavior: smooth;scroll-snap-align
+    - overscroll-behavior
+    - scroll-timeline
+    - Houdini
 - 育儿等读书笔记
 - 以前的代码整理/work 目录（横向无法滚动）
     - git ：w里整理 源码-链接-亮点
