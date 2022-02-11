@@ -355,3 +355,10 @@ function setTheme(name){
 #### 更多
  [CSS Object Model](https://developer.mozilla.org/zh-CN/docs/Web/API/CSS_Object_Model)是一组允许用JavaScript操纵CSS的API。 它是继DOM和HTML API之后，又一个操纵CSS的接口，从而能够动态地读取和修改CSS样式。
 
+
+<!-- ## 文档几何
+- 文档坐标、视口坐标、容器坐标
+- getBoundingClientRect() getClientRects 
+- elementFromPoint()
+- scrollTo scrollBy scrollIntoView
+- 视口大小、内容大小、滚动位置 -->
