@@ -4,7 +4,7 @@
  * @Author: bindy(128080)
  * @Date: 2020-08-31 09:28:50
  * @LastEditors: bindy(128080)
- * @LastEditTime: 2021-02-25 14:59:23
+ * @LastEditTime: 2022-02-11 18:13:18
  */
 module.exports = {
     title: 'Bindy 的小仓库',
@@ -75,7 +75,7 @@ module.exports = {
                 ['3', 'SVG动画'],
             ],
             "/docs/webapi/": [
-                ['', 'SVG基础(一)'],
+                ['', 'Web API(一)'],
                 ['2', 'Web API(二)'],
                 // ['3', 'SVG动画'],
             ],
