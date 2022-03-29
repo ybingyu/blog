@@ -18,8 +18,8 @@ module.exports = {
     ],
     theme: 'reco',
     themeConfig: {
-        logo: 'https://gitee.com/bindyy/img/raw/master/a.jpg',
-        authorAvatar: 'https://gitee.com/bindyy/img/raw/master/a.jpg',
+        logo: 'https://raw.githubusercontent.com/ybingyu/picgo/master/blogimg/a.jpg',
+        authorAvatar: 'https://raw.githubusercontent.com/ybingyu/picgo/master/blogimg/a.jpg',
         author: 'bindy',
         type: 'blog',
         subSidebar: 'auto',//在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
