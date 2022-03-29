@@ -51,8 +51,12 @@ module.exports = {
                 "icon": "reco-message",
                 "items": [
                     {
-                        "text": "svg",
+                        "text": "SVG",
                         "link": "/docs/svg/"
+                    },
+                    {
+                        "text": "Web API",
+                        "link": "/docs/webapi/"
                     }
                 ]
             }/* ,
@@ -77,7 +81,7 @@ module.exports = {
             "/docs/webapi/": [
                 ['', 'Web API(一)'],
                 ['2', 'Web API(二)'],
-                // ['3', 'SVG动画'],
+                ['3', 'Web API(三)'],
             ],
             "/work/": [
                 ['2020', '2020'],
