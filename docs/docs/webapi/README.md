@@ -24,7 +24,7 @@ API就是给程序员提供的一种工具，以便能更轻松的实现想要�
 
 ###  Web  API
 
-![](https://raw.githubusercontent.com/ybingyu/picgo/master/blogimg/webapi/1.png)
+![](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/webapi/1.png)
 
 
 - ECMAScript - JavaScript的核心  
@@ -62,7 +62,7 @@ https://juejin.cn/post/6980275287837638687 -->
 ### 概念
 当网页被加载时，浏览器会创建页面的**文档对象模型**（Document Object Model，DOM）。  
 HTML DOM 模型被结构化为对象树：  
-![](https://raw.githubusercontent.com/ybingyu/picgo/master/blogimg/webapi/2.gif)
+![](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/webapi/2.gif)
 
 - 文档：一个网页可以称为文档
 - 节点：网页中的所有内容都是节点（标签、属性、文本、注释等）
@@ -220,7 +220,7 @@ d.addEventListener('click',handleMouseMove,{
 3. ```passive```：true 让 阻止默认行为（```preventDefault()```）失效。
 > Firefox和Chrome都默认把touchmove和mousewheel事件设置为“被动式”(passive:true)。那么调用```preventDefault()```函数，就会失效。同时浏览器的开发工具也会发出警告
 
-![](https://raw.githubusercontent.com/ybingyu/picgo/master/blogimg/webapi/2.png)
+![](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/webapi/2.png)
 
 如果确实想为这两个事件注册一个会调用```preventDefault()```的事件处理程序，应该显示地将```passive```属性设置为```false```。
 
