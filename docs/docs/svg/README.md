@@ -28,7 +28,7 @@ SVG 使用 XML 格式定义图像。
 
 
 ## CANIUSE
-![image.png](https://gitee.com/bindyy/img/raw/master/svg/1/1.png)
+![image.png](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/svg/1/1.png)
 IE8以下和旧安卓设备，可以用 [Modernizr](https://modernizr.com/) 这样的库来检查并提供降级方案
 ```javascript
 if (!Modernizr.svg) {
@@ -114,7 +114,7 @@ demo:[viewport.svg](http://w.bindyy.cn/svg/1/viewport.svg)
 ```
 ## ViewBox
 SVG使用的坐标系统或者说网格系统是：原点（0，0）位于视口的左上角，x从左向右依次递增，y从上到小依次递增。  
-![](https://gitee.com/bindyy/img/raw/master/svg/1/2.png)  
+![](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/svg/1/2.png)  
 SVG的元素的单位可以不统一。
 ```html
 <svg width="600" height="300" style="outline: 5px solid #e6e6e6">  
@@ -124,7 +124,7 @@ SVG的元素的单位可以不统一。
         <rect x="10" y="50" width="10" height="10" fill="yellow" />
 </svg>  
 ```
-![](https://gitee.com/bindyy/img/raw/master/svg/1/3.png)
+![](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/svg/1/3.png)
 ## ViewBox
 可以自己为视口设置坐标系，通过SVG元素上的[viewBox](http://know.webhek.com/svg/svg-viewbox-preserveaspectratio.html)属性。
 > viewBox="x, y, width, height"  // x:左上角横坐标，y:左上角纵坐标，width:宽度，height:高度
@@ -141,12 +141,12 @@ demo:[viewBox.svg](http://w.bindyy.cn/svg/1/viewBox.svg)
 </svg>
 ```
 1. 如果没有`viewBox`, 应该是长这样的：
-![](https://gitee.com/bindyy/img/raw/master/svg/1/4.png)  
+![](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/svg/1/4.png)  
 `<rect>`大小只有整个SVG舞台的`1/20`.
 2. `viewBox="0,0,40,30"`相当于在SVG上圈了下图左上角所示的一个框框：  
-![](https://gitee.com/bindyy/img/raw/master/svg/1/5.png)
+![](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/svg/1/5.png)
 3. 然后把这个框框，连同框框里的小矩形一起放大到整个SVG大小（如下gif）:  
-![](https://gitee.com/bindyy/img/raw/master/svg/1/6.gif)
+![](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/svg/1/6.gif)
 ### preserveAspectRatio
 为了解决SVG视口长宽比例和viewBox定义的长宽比例不同的问题以及如何对齐问题。这个时候就需要preserveAspectRatio属性了。
 默认值
@@ -384,7 +384,7 @@ demo:[pattern.svg](http://w.bindyy.cn/svg/1/pattern.svg)
     <rect x="36" y="36" width="100" height="100" style="fill: url(#polkadot);stroke: black"/>
 </svg>
 ```
-![](https://gitee.com/bindyy/img/raw/master/svg/1/7.png)
+![](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/svg/1/7.png)
 
 ```patternUnits```：定义如何排列图案，有两个可能的值：```objectBoundingBox | userSpaceOnUse```
 - `patternUnits = userSpaceOnUse`
@@ -410,7 +410,7 @@ demo:[pattern-2.svg](http://w.bindyy.cn/svg/1/pattern-2.svg)
 </svg>
 
 ```
-![image.png](https://gitee.com/bindyy/img/raw/master/svg/1/8.png)  
+![image.png](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/svg/1/8.png)  
 [更详细的文章（一）](https://www.w3cplus.com/svg/svg-pattern-element.html)  
 [更详细的文章（二）](https://www.w3cplus.com/svg/svg-pattern-attributes.html)
 
@@ -429,7 +429,7 @@ demo:[pattern-2.svg](http://w.bindyy.cn/svg/1/pattern-2.svg)
 	</rect>
 ```
 
-![](https://gitee.com/bindyy/img/raw/master/svg/1/9.png)
+![](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/svg/1/9.png)
 ### 径向渐变
 径向渐变的每个渐变点是一个圆形路径，从中心点向外扩散。设置方式与线性渐变大致相同。如果填充对象边界框不是正方形的，则过渡路径会变成椭圆来匹配边界框的长宽比。
 径向渐变使用radialGradient元素表示：
@@ -444,7 +444,7 @@ demo:[pattern-2.svg](http://w.bindyy.cn/svg/1/pattern-2.svg)
 <rect x="20" y="20" width="200" height="200" style="fill:url(#radial);stroke:black;"></rect>
 
 ```
-![](https://gitee.com/bindyy/img/raw/master/svg/1/10.png)
+![](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/svg/1/10.png)
 
 
 ## 文本
@@ -472,7 +472,7 @@ text-anchor属性可以改变(x,y)作为起始坐标的定义。
         <text x="100" y="90" style="text-anchor:end">End</text>
     </g>
 ```
-![](https://gitee.com/bindyy/img/raw/master/svg/1/11.png)
+![](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/svg/1/11.png)
 ### tspan元素
 tspan元素与html的span元素类似，可以嵌套在文本内容中，可以单独改变其内部文本内容的样式，也可以单独定位，达到换行的效果。  
 demo:[text-tspan.svg](http://w.bindyy.cn/svg/1/text-tspan.svg)

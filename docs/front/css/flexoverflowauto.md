@@ -14,7 +14,7 @@ tags:
 
 # 解决方案
 css
-```
+```css
 flex:1 ;
 overflow:auto;
 height:0; //纵向滚动

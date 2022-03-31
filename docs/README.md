@@ -1,4 +1,4 @@
 ---
 home: true
-bgImage: 'https://raw.githubusercontent.com/ybingyu/picgo/master/blogimg/theme/pexels-pineapple-supply-co-185348.jpg'
+bgImage: 'https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/theme/pexels-pineapple-supply-co-185348.jpg'
 ---

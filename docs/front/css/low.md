@@ -28,7 +28,7 @@ _:default, .fireworks {
 
 效果如下（这里以macOS为例）
 
-![](https://mmbiz.qpic.cn/sz_mmbiz_gif/H8M5QJDxMHrdYVQ9oHbSX6SQEqkbb1bEHejYoRb0dMPicb5bzMmT0WjbZYQBu8pxtjhLCCmibUqJwRcAWiaOXcwOA/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![](https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/front/css/aniuser.gif)
 
 
 可以看到，当勾选 "减弱动态效果" 时，动效就完全消失了。

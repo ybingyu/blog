@@ -37,3 +37,10 @@ https://github.com/vuepress-reco/vuepress-theme-reco/issues/276
 
 
 # TO LEARN
+
+
+# git cdn
+- img:
+    - https://cdn.jsdelivr.net/gh/ybingyu/picgo/blogimg/webapi/3-4.png
+    - https://raw.githubusercontent.com/ybingyu/picgo/master/blogimg/webapi/3-4.png
+    - https://gitee.com/bindyy/img/raw/master/svg/2/1.png

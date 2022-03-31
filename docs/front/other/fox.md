@@ -24,7 +24,7 @@ https://zydown.99.com/gw/other/package/yby/2021/06/hy/
 ## 视频兼容
 ### 行内视频
 
-```
+```html
  <video src="https://" loop="true" id="index1Video" poster="https://" preload="auto" autoplay 
                         x5-video-player-type="h5"
                         x5-video-player-fullscreen="true" webkit-playsinline="" x-webkit-airplay="true" airplay="allow"
@@ -43,7 +43,7 @@ IOS12+，点击一个video标签，其余的video也都被允许播放。而安�
 
 ### onend
 部分安卓机（某个型号的小米）不执行video.onend，与监听ontimeupdate(e.currentTarget.currentTime )一起使用
-```
+```javascript
 document.getElementById('cutVideo').ontimeupdate = function (e) {
     if (e.currentTarget.currentTime > 14) {// 时间为已知14s
         console.log('ppp')
@@ -59,7 +59,7 @@ IOS不用web audio api，是因为要自动播放背景音乐，用web auido api
 
 ## 震动
 安卓支持震动、IOS不支持
-```
+```javascript
 if (navigator.vibrate) {
     navigator.vibrate(1000);//震动秒数
 } else if (navigator.webkitVibrate) {
@@ -72,7 +72,7 @@ if (navigator.vibrate) {
 
 ## 摇一摇
 IOS权限获取需要HTTPS环境，必须要用户同意。点击时调用```iosGrantedTips```。如果用户拒绝了，关闭APP，会再次发请求。
-```
+```javascript
         // 摇一摇权限
         iosGrantedTips() {
             var ua = navigator.userAgent.toLowerCase();
